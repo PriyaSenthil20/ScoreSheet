@@ -15,4 +15,20 @@ public class ScoreSheetForTeams {
         public void setGameNumber(int gameNumber) {
                 this.gameNumber = gameNumber;
         }
+
+        public Map<Player, Team> getTeamEntries() {
+                return teamEntries;
+        }
+
+        public void setTeamEntries(Map<Player, Team> teamEntries) {
+                this.teamEntries = teamEntries;
+        }
+
+        public Map<Integer, Team> getFinalTeamEntries() {
+                return finalTeamEntries;
+        }
+
+        public void setFinalTeamEntries(Map<Integer, Team> finalTeamEntries) {
+                this.finalTeamEntries = finalTeamEntries;
+        }
 }

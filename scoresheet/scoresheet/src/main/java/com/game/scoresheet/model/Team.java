@@ -1,5 +1,8 @@
 package com.game.scoresheet.model;
 
+
+import net.minidev.json.annotate.JsonIgnore;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,14 +12,14 @@ public class Team {
     private String teamName;
     private List<Player> playersList=new ArrayList<>();
     private int teamTotal;
-    private boolean isActive=true;
+    private boolean isActive;
 
-    public Team(int teamId, String teamName, List<Player> playersList, int teamTotal, boolean isActive) {
+    public Team(int teamId, String teamName, List<Player> playersList, int teamTotal) {
         this.teamId = teamId;
         this.teamName = teamName;
         this.playersList = playersList;
         this.teamTotal = teamTotal;
-        this.isActive = isActive;
+        this.isActive = true;
     }
 
     public Team(int teamId, List<Player> playersList, int teamTotal) {
@@ -24,15 +27,10 @@ public class Team {
         this.playersList = playersList;
         this.teamTotal = teamTotal;
         this.teamName = "Team "+teamId;
+        this.isActive=true;
 
     }
-    public Team(int teamId, List<Player> playersList, int teamTotal,boolean isActive) {
-        this.teamId = teamId;
-        this.playersList = playersList;
-        this.teamTotal = teamTotal;
-        this.teamName = "Team "+teamId;
-        this.isActive=isActive;
-    }
+
     public String getTeamName() {
         return teamName;
     }

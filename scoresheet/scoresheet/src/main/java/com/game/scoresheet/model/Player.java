@@ -5,27 +5,22 @@ public class Player {
     private String playerName;
     private int recentScore;
     private int playerTotalScore;
-    private boolean isActive=true;
+    private boolean isActive;
 
-    public Player(int playerId, String playerName, int recentScore, int playerTotalScore, boolean isActive) {
+    public Player(int playerId, String playerName, int recentScore, int playerTotalScore) {
         this.playerId = playerId;
         this.playerName = playerName;
         this.recentScore = recentScore;
         this.playerTotalScore = playerTotalScore;
-        this.isActive = isActive;
+        this.isActive = true;
     }
 
-    public Player(int playerId, String playerName, int recentScore, int totalScore) {
-        this.playerId = playerId;
-        this.playerName = playerName;
-        this.recentScore = recentScore;
-        this.playerTotalScore = totalScore;
-    }
     public Player(int playerId, int recentScore, int totalScore) {
         this.playerId = playerId;
         this.playerName = "Player "+playerId;
         this.recentScore = recentScore;
         this.playerTotalScore = totalScore;
+        this.isActive=true;
     }
     public int getPlayerId() {
         return playerId;
