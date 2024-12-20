@@ -6,31 +6,70 @@ import java.util.List;
 import java.util.Map;
 
 public class ScoreSheetForPlayers {
-    private int gameNumber;
-    private List<Player> playersList=new ArrayList<>();
-    private Map<Integer,Player> finalPlayersList=new HashMap<>();
+        private int score_id;
+        private int round_id;
+        private int player_id;
+        private String player_name;
+        private int score;
+        private String note;
 
-    public int getGameNumber() {
-        return gameNumber;
+    public ScoreSheetForPlayers(int score_id, int round_id, int player_id, String player_name, int score, String note) {
+        this.score_id = score_id;
+        this.round_id = round_id;
+        this.player_id = player_id;
+        this.player_name = player_name;
+        this.score = score;
+        this.note = note;
     }
 
-    public void setGameNumber(int gameNumber) {
-        this.gameNumber = gameNumber;
+    public ScoreSheetForPlayers() {
     }
 
-    public List<Player> getPlayersList() {
-        return playersList;
+    public int getScore_id() {
+        return score_id;
     }
 
-    public void setPlayersList(List<Player> playersList) {
-        this.playersList = playersList;
+    public void setScore_id(int score_id) {
+        this.score_id = score_id;
     }
 
-    public Map<Integer, Player> getFinalPlayersList() {
-        return finalPlayersList;
+    public int getRound_id() {
+        return round_id;
     }
 
-    public void setFinalPlayersList(Map<Integer, Player> finalPlayersList) {
-        this.finalPlayersList = finalPlayersList;
+    public void setRound_id(int round_id) {
+        this.round_id = round_id;
+    }
+
+    public int getPlayer_id() {
+        return player_id;
+    }
+
+    public void setPlayer_id(int player_id) {
+        this.player_id = player_id;
+    }
+
+    public String getPlayer_name() {
+        return player_name;
+    }
+
+    public void setPlayer_name(String player_name) {
+        this.player_name = player_name;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
     }
 }

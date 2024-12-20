@@ -11,10 +11,6 @@ public class JdbcPlayerDao implements PlayerDao{
         return null;
     }
 
-    @Override
-    public Player getPlayerByName(String name) {
-        return null;
-    }
 
     @Override
     public Player getPlayerById(int playerId) {
@@ -26,10 +22,6 @@ public class JdbcPlayerDao implements PlayerDao{
         return null;
     }
 
-    @Override
-    public Player updateRecentScore(int score) {
-        return null;
-    }
 
     @Override
     public boolean deletePlayer(String playerName) {

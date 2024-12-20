@@ -3,35 +3,21 @@ package com.game.scoresheet.model;
 public class Player {
     private int playerId;
     private String playerName;
-    private int recentScore;
-    private int playerTotalScore;
+    private int game_id;
     private boolean isActive;
 
-    public Player(int playerId, String playerName, int recentScore, int playerTotalScore) {
+    public Player() {
+    }
+
+    public Player(int playerId, String playerName, int game_id, boolean isActive) {
         this.playerId = playerId;
         this.playerName = playerName;
-        this.recentScore = recentScore;
-        this.playerTotalScore = playerTotalScore;
-        this.isActive = true;
+        this.game_id = game_id;
+        this.isActive = isActive;
     }
 
-    public Player(int playerId, int recentScore, int totalScore) {
-        this.playerId = playerId;
-        this.playerName = "Player "+playerId;
-        this.recentScore = recentScore;
-        this.playerTotalScore = totalScore;
-        this.isActive=true;
-    }
     public int getPlayerId() {
         return playerId;
-    }
-
-    public boolean isActive() {
-        return isActive;
-    }
-
-    public void setActive(boolean active) {
-        isActive = active;
     }
 
     public void setPlayerId(int playerId) {
@@ -46,19 +32,19 @@ public class Player {
         this.playerName = playerName;
     }
 
-    public int getRecentScore() {
-        return recentScore;
+    public int getGame_id() {
+        return game_id;
     }
 
-    public void setRecentScore(int recentScore) {
-        this.recentScore = recentScore;
+    public void setGame_id(int game_id) {
+        this.game_id = game_id;
     }
 
-    public int getPlayerTotalScore() {
-        return playerTotalScore;
+    public boolean isActive() {
+        return isActive;
     }
 
-    public void setPlayerTotalScore(int playerTotalScore) {
-        this.playerTotalScore = playerTotalScore;
+    public void setActive(boolean active) {
+        isActive = active;
     }
 }
