@@ -1,112 +1,36 @@
 <template>
   <div class="home">
-    <nav class="navbar">
-      <nav-options />
-    </nav>
+
     <div class="welcome-section">
       <welcome />
     </div>
-    
-  </div>
-  <div class="gallery-body">
-    
-    <div class="gallery-container">
-        <div class="gallery">
-            <div class="gallery-inner">
-                <div v-for="(photo, index) in photoGallery" :key="index" class="photo-item ">
-                <img :src="photo.image" :alt="photo.description" class="gallery-image" />
-                <p>{{ photo.description }}</p>
-                </div>
-            </div>
-        </div>
+    <div class="game-section">
+      <game />
+    </div>
+    <div class="round-section">
+      <rounds />
     </div>
   </div>
+  
 </template>
 
 <script>
-import NavOptions from '../components/NavOptions.vue';
 import Welcome from '../components/Welcome.vue';
-import Specials from '../components/Specials.vue';
-
-import PizzaService from '../services/PizzaService.js';
-
+import Game from '../components/Game.vue';
+import Rounds from '../components/Rounds.vue';
 
 export default {
   components: {
-    NavOptions,
+    
     Welcome,
+    Game,
+    Rounds
     
   },
   data() {
     return{ 
-      photoGallery: [
-        {
-          image: new URL("../assets/ModelA.jpg", import.meta.url).href,
-          description: "Pizza ready to serve.",
-        },
-      
-        {
-          image: new URL("../assets/ModelD.jpg", import.meta.url).href,
-          description: "We LOVE Pizza!",
-        },
-        {
-          image: new URL("../assets/ModelB.jpg", import.meta.url).href,
-          description: "Fresh ingredients on display.",
-        }, {
-          image: new URL("../assets/pic7.jpg", import.meta.url).href,
-          description: "Bringing Smiles One Slice at a Time.",
-        },
-        {
-          image: new URL("../assets/ModelC.jpg", import.meta.url).href,
-          description: "In Pizza We Crust!",
-        }, {
-          image: new URL("../assets/pic1.jpg", import.meta.url).href,
-          description: "Where Every Slice Feels Like Home.",
-        }, {
-          image: new URL("../assets/pic5.jpg", import.meta.url).href,
-          description: "Your Pizza, Your Way!",
-        }, {
-          image: new URL("../assets/pic2.jpg", import.meta.url).href,
-          description: "Life Happens, Pizza Helps.",
-        }, {
-          image: new URL("../assets/pic3.jpg", import.meta.url).href,
-          description: "Cheese Your Day with Us!",
-        }, {
-          image: new URL("../assets/ModelC.jpg", import.meta.url).href,
-          description: "Crust to Crave, Flavor to Savor",
-        },
-        {
-          image: new URL("../assets/actionPic.jpg", import.meta.url).href,
-          description: "Now that's taking one for the team.",
-        },
-        {
-          image: new URL("../assets/inCar.jpg", import.meta.url).href,
-          description: "The pizza didn't even make it home.",
-        },
-        {
-          image: new URL("../assets/Pepperoni2.jpg", import.meta.url).href,
-          description: "The pizza so big, it does not fit the frame.",
-        },
-        {
-          image: new URL("../assets/heart.jpg", import.meta.url).href,
-          description: "We LOVE Pizza!",
-        },
-        {
-          image: new URL("../assets/grandmas.jpg", import.meta.url).href,
-          description: "Hot Pizza, Cool Vibes.",
-        },
-        {
-          image: new URL("../assets/WholeCheese.jpg", import.meta.url).href,
-          description: "The Secret Ingredient is Always Pizza!",
-        },
-        {
-          image: new URL("../assets/WholePepperoni.jpg", import.meta.url).href,
-          description: "Fuel Your Day, One Slice at a Time.",
-        }
-        
-        
-      ],
-      products: []
+     
+     
     };
   },
   methods: {

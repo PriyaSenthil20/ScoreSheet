@@ -3,17 +3,10 @@ import { useStore } from 'vuex'
 
 // Import components
 import HomeView from '../views/HomeView.vue';
+import GameView from '../views/GameView.vue';
 import LoginView from '../views/LoginView.vue';
 import LogoutView from '../views/LogoutView.vue';
 import RegisterView from '../views/RegisterView.vue';
-import CustomerRegisterView from '../views/CustomerRegisterView.vue';
-import CustomerOrderView from '../views/CustomerOrderView.vue';
-import AdminInventoryView from '../views/AdminInventoryView.vue';
-import AdminOrderView from '../views/AdminOrderView.vue';
-import PaymentView from '../views/PaymentView.vue';
-import AboutUsView from '../views/AboutUsView.vue';
-import MenuView from '../views/MenuView.vue';
-import SpecialsView from '../views/SpecialsView.vue';
 /**
  * The Vue Router is used to "direct" the browser to render a specific view component
  * inside of App.vue depending on the URL.
@@ -30,8 +23,7 @@ const routes = [
     meta: {
       requiresAuth: false
     }
-  },
-  {
+  },{
     path: "/login",
     name: "login",
     component: LoginView,
@@ -56,67 +48,23 @@ const routes = [
     }
   },
   {
-    path: "/customerRegister",
-    name: "customerRegister",
-    component: CustomerRegisterView,
+    path: "/games",
+    name: "games",
+    component: GameView,
     meta: {
       requiresAuth: false
     }
   },
   {
-    path: "/customerOrder",
-    name: "customerOrder",
-    component: CustomerOrderView,
-    meta: {
-      requiresAuth: true
-    }
-  },
-  {
-    path: "/AdminInventory",
-    name: "AdminInventory",
-    component: AdminInventoryView,
-    meta: {
-      requiresAuth: true
-    }
-  },
-  {
-    path: "/AdminOrder",
-    name: "AdminOrder",
-    component: AdminOrderView,
-    meta: {
-      requiresAuth: true
-    }
-  },
-  {
-    path: "/payments",
-    name: "payments",
-    component: PaymentView,
-    meta: {
-      requiresAuth: true
-    }
-  },{
-    path: "/menu",
-    name: "menu",
-    component: MenuView,
-    meta: {
-      requiresAuth: false
-    }
-  },{
-    path: "/aboutUs",
-    name: "aboutUs",
-    component: AboutUsView,
+    path: "/games/rounds",
+    name: "rounds",
+    component: GameView,
     meta: {
       requiresAuth: false
     }
   },
-  {
-    path: "/Specials",
-    name: "Specials",
-    component: SpecialsView,
-    meta: {
-      requiresAuth: false
-    }
-  }
+
+
 ];
 
 // Create the router

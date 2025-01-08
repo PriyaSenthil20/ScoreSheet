@@ -9,9 +9,8 @@ const http = axios.create({
 
 export default {
   // Fetch all orders (admin view)
-  createGame(game) {
-    
-    return http.post('/games',game);
+  createRound(round) {
+    return http.post('/games/rounds',round);
 
   }
 }

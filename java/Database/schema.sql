@@ -11,7 +11,7 @@ CREATE TABLE games (
 
 -- Create the 'Players' table to store player information
 CREATE TABLE players (
-    player_id SERIAL PRIMARY KEY,
+    player_id int PRIMARY KEY,
     game_id INT REFERENCES Games(game_id) ON DELETE CASCADE,
     player_name VARCHAR(255) NOT NULL,
 	is_active BOOLEAN DEFAULT true

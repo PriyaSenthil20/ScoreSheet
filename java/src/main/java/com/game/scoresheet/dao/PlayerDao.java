@@ -8,5 +8,5 @@ public interface PlayerDao {
     List<Player> getPlayers();
     Player getPlayerById(int playerId);
     Player createPlayer(Player player);
-    boolean deletePlayer(String playerName);
+    boolean deletePlayer(Player player);
 }

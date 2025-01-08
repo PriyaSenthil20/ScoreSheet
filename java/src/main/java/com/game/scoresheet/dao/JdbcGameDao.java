@@ -49,12 +49,15 @@ public class JdbcGameDao implements GameDao {
     @Override
     public Game createGame(Game newGame) {
         Game game = null;
-        String insertCustomerSql = "INSERT INTO public.games(" +
-                " game_name, game_date, game_type) " +
-                " VALUES ( ?, ?, ?) RETURNING game_id";
+        if(newGame.getGame_name()==null||newGame.getGame_name().isEmpty()){
+            newGame.setGame_name("NewGame");
+        }
+        String insertGameSql = "INSERT INTO public.games(" +
+                " game_name, game_date) " +
+                " VALUES ( ?, ?) RETURNING game_id";
 
         try {
-            int newGameId=jdbcTemplate.queryForObject(insertCustomerSql,Integer.class, newGame.getGame_name(),newGame.getGame_date());
+            int newGameId=jdbcTemplate.queryForObject(insertGameSql,Integer.class, newGame.getGame_name(),newGame.getGame_date());
             game= getGameById(newGameId);
         } catch (CannotGetJdbcConnectionException e) {
             throw new DaoException("Unable to connect to server or database", e);
