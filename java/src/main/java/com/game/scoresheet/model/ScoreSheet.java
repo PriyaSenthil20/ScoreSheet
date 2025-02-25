@@ -1,11 +1,6 @@
 package com.game.scoresheet.model;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-public class ScoreSheetForPlayers {
+public class ScoreSheet {
         private int score_id;
         private int round_id;
         private int player_id;
@@ -13,7 +8,7 @@ public class ScoreSheetForPlayers {
         private int score;
         private String note;
 
-    public ScoreSheetForPlayers(int score_id, int round_id, int player_id, String player_name, int score, String note) {
+    public ScoreSheet(int score_id, int round_id, int player_id, String player_name, int score, String note) {
         this.score_id = score_id;
         this.round_id = round_id;
         this.player_id = player_id;
@@ -22,7 +17,7 @@ public class ScoreSheetForPlayers {
         this.note = note;
     }
 
-    public ScoreSheetForPlayers() {
+    public ScoreSheet() {
     }
 
     public int getScore_id() {
